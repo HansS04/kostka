@@ -1,9 +1,26 @@
 var hody = [];
+var timer = false;
+
+
+function animace(){
+    var h = Math.ceil(Math.random() * 6);
+    document.getElementById('cube').src='img/kostka' + h + '.png';
+}
 
 document.getElementById('game').addEventListener('click',
     function(){
-        hod();
-        console.log(hody);
+        if (!timer){
+            timer = setInterval(animace, 100);
+            game.innerText = "STOP";
+        }else{
+            game.innerText = "HRAJ";
+            clearInterval(timer)
+            timer = false;
+            hod();
+            console.log(hody);
+        }
+       
+       
     }
 );
 
