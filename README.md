@@ -1,1 +1,2 @@
-"# kostka"  
+#  kostka
+Hru vytvořenou v  Javasriptu
