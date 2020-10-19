@@ -4,7 +4,7 @@ var timer = false;
 
 function animace(){
     var h = Math.ceil(Math.random() * 6);
-    document.getElementById('cube').src='img/kostka' + h + '.png';
+    document.getElementById('cube').src='img/kostka' + h +  '.png';
 }
 
 document.getElementById('game').addEventListener('click',
