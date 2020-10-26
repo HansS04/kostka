@@ -34,7 +34,7 @@ main{
   
   .column {
     float: left;
-    margin-top: 80px;
+    margin-top: 30px;
     margin-left: 120px;
     padding: 10px;
     height: 300px; 
@@ -89,3 +89,13 @@ main{
   body{
       background-image: url(/img/woodback.jpg) !important;
   }
+#novahra{
+  margin-left: 500px;
+  padding: 10px;
+  background-image: url(../img/wood.jpg);
+  border: solid 3px white;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 20px;
+}
+ 
