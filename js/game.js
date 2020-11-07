@@ -8,6 +8,9 @@ const buttonj1 = document.getElementById("buttonj1");
 const buttonj2 = document.getElementById("buttonj2");
 const buttonj3 = document.getElementById("buttonj3");
 const buttonj4 = document.getElementById("buttonj4");
+let prvni = "Ne";
+let druhy = "Ne";
+let treti = "Ne";
 
 buttonj1.addEventListener("click", function () {
      jmeno1 = prompt("Zadej cele jmeno", "hráč");
@@ -40,7 +43,6 @@ function animace() {
     document.getElementById('cube').src = 'img/kostka' + h + '.png';
 
 }
-
 document.getElementById('hra').addEventListener('click',
     function () {
         if (!timer) {
@@ -57,18 +59,14 @@ document.getElementById('hra').addEventListener('click',
 
     }
 );
-
 function suma(cisla2) {
     let sum = 0;
     cisla2.forEach(function (value, index) {
         sum += value;
     })
-    if (sum >= 50){
-        alert(`Po ${pocetHodu.length} hodech vyhrál hráč ${jmeno1},pro pokračování klikněte na talčítko nová hra.`);
-    } 
+    
     return sum;
 }
-
 function max(cisla2) {
     let max = 1;
     cisla2.forEach(function (value, index) {
@@ -76,7 +74,6 @@ function max(cisla2) {
     })
     return max;
 }
-
 function minimum(cisla2) {
     let min = 6;
     cisla2.forEach(function (value, index) {
@@ -84,7 +81,6 @@ function minimum(cisla2) {
     })
     return min;
 }
-
 function průměr(sum, count) {
     return (sum / count).toFixed(2);
 }
@@ -94,20 +90,38 @@ function průměr(sum, count) {
 function hod() {
     let h = Math.ceil(Math.random() * 6);
     pocetHodu.push(h);
+    if (suma(pocetHodu) >= 50){
+        
+        if (prvni == "Ne" && druhy == "Ne" && treti =="Ne"){
+            prvni="Ano";
+            alert(`Po ${pocetHodu.length} hodech  vyhrál hráč ${jmeno1}.`);
+            document.getElementById('prvni').innerHTML = `<p> ${jmeno1} </p>`;
+            
+        }
+         else if (prvni == "Ano" && druhy == "Ne" && treti =="Ne"){
+            druhy="Ano";
+            alert(`Po ${pocetHodu.length} hodech  je na 2. místě hráč ${jmeno1}.`);
+            document.getElementById('druhy').innerHTML = `<p> ${jmeno1}. </p>`;
+            
+        }
+
+        else if(prvni == "Ano" && druhy == "Ano" && treti =="Ne"){
+            treti="Ano";
+            alert(`Po ${pocetHodu.length} hodech  je na . místě hráč ${jmeno1}.`);
+            document.getElementById('treti').innerHTML = `<p> ${jmeno1} </p>`;
+        }
+        if(prvni == "Ano" && druhy == "Ano" && treti =="Ano"){
+                   
+            alert(`Konec hry, pro pokracovani stisknete tlacitko nová hra.`);
+           
+        }
+        return;
+      
+    } 
     document.getElementById('cube').src = 'img/kostka' + h + '.png';
     document.getElementById('result').innerHTML = '<p>Hod: ' + h + '</p>';
-    document.getElementById('result').innerHTML +=
-        '<p>Počet hodů: ' + pocetHodu.length + '</p>';
-
-    
-        document.getElementById('result').innerHTML +=
-
-            '<p>Součet hodů: ' + suma(pocetHodu) + '</p>';
-    
-
- 
-
-
+    document.getElementById('result').innerHTML +='<p>Počet hodů: ' + pocetHodu.length + '</p>';
+    document.getElementById('result').innerHTML += '<p>Součet hodů: ' + suma(pocetHodu) + '</p>';
     document.getElementById('result').innerHTML +=
         '<p>Průměr hodů: ' + průměr(suma(pocetHodu), pocetHodu.length) + '</p>';
     document.getElementById('result').innerHTML +=
@@ -139,8 +153,6 @@ document.getElementById('game2').addEventListener('click', function () {
         hod2();
         console.log(pocetHodu2);
     }
-
-
 }
 );
 
@@ -149,12 +161,9 @@ function suma2(cisla2) {
     cisla2.forEach(function (value, index) {
         sum2 += value;
     })
-    if (sum2 >= 50){
-        alert(`Po ${pocetHodu2.length} hodech vyhrál hráč ${jmeno2}, pro pokračování klikněte na talčítko nová hra.`)
-    } 
+    
     return sum2;
 }
-
 function max2(cisla2) {
     let max = 1;
     cisla2.forEach(function (value, index) {
@@ -162,7 +171,6 @@ function max2(cisla2) {
     })
     return max;
 }
-
 function minimum2(cisla2) {
     let min = 6;
     cisla2.forEach(function (value, index) {
@@ -170,30 +178,44 @@ function minimum2(cisla2) {
     })
     return min;
 }
-
 function průměr2(sum2, count2) {
     return (sum2 / count2).toFixed(2);
 }
-
-
-
 function hod2() {
     let h2 = Math.ceil(Math.random() * 6);
     pocetHodu2.push(h2);
+    if (suma2(pocetHodu2) >= 50){
+        
+        if (prvni == "Ne" && druhy == "Ne" && treti =="Ne"){
+            prvni="Ano";
+            alert(`Po ${pocetHodu2.length} hodech  vyhrál hráč ${jmeno2}.`);
+            document.getElementById('prvni').innerHTML = `<p> ${jmeno2} </p>`;
+            
+        }
+         else if (prvni == "Ano" && druhy == "Ne" && treti =="Ne"){
+            druhy="Ano";
+            alert(`Po ${pocetHodu2.length} hodech  je na 2. místě hráč ${jmeno2}.`);
+            document.getElementById('druhy').innerHTML = `<p> ${jmeno2}. </p>`;
+            
+        }
+
+        else if(prvni == "Ano" && druhy == "Ano" && treti =="Ne"){
+            treti="Ano";
+            alert(`Po ${pocetHodu2.length} hodech  je na 2. místě hráč ${jmeno2}.`);
+            document.getElementById('treti').innerHTML = `<p> ${jmeno2} </p>`;
+        }
+        if(prvni == "Ano" && druhy == "Ano" && treti =="Ano"){
+                   
+            alert(`Konec hry, pro pokracovani stisknete tlacitko nová hra. Stupnici vítězů najdete níže.`);
+           
+        }
+        return;
+      
+    } 
     document.getElementById('cube2').src = 'img/kostka' + h2 + '.png';
     document.getElementById('result2').innerHTML = '<p>Hod: ' + h2 + '</p>';
-    document.getElementById('result2').innerHTML +=
-        '<p>Počet hodů: ' + pocetHodu2.length + '</p>';
-
-    
-        document.getElementById('result2').innerHTML +=
-
-            '<p>Součet hodů: ' + suma2(pocetHodu2) + '</p>';
-    
-
- 
-
-
+    document.getElementById('result2').innerHTML +='<p>Počet hodů: ' + pocetHodu2.length + '</p>';
+    document.getElementById('result2').innerHTML +='<p>Součet hodů: ' + suma2(pocetHodu2) + '</p>';
     document.getElementById('result2').innerHTML +=
         '<p>Průměr hodů: ' + průměr(suma2(pocetHodu2), pocetHodu2.length) + '</p>';
     document.getElementById('result2').innerHTML +=
@@ -206,14 +228,10 @@ function hod2() {
 
 let pocetHodu3 = [];
 let timer3 = false;
-
-
-
 function animace3() {
     let h3 = Math.ceil(Math.random() * 6);
     document.getElementById('cube3').src = 'img/kostka' + h3 + '.png';
 }
-
 document.getElementById('game3').addEventListener('click', function () {
     if (!timer3) {
         timer3 = setInterval(animace3, 100);
@@ -229,18 +247,14 @@ document.getElementById('game3').addEventListener('click', function () {
 
 }
 );
-
 function suma3(cisla3) {
     let sum3 = 0;
     cisla3.forEach(function (value, index) {
         sum3 += value;
     })
-    if (sum3 >= 50){
-        alert(`Po ${pocetHodu3.length} vyhrál hráč ${jmeno3}, pro pokračování klikněte na talčítko nová hra.`);
-    }
+    
     return sum3;
 }
-
 function max3(cisla3) {
     let max = 1;
     cisla3.forEach(function (value, index) {
@@ -248,7 +262,6 @@ function max3(cisla3) {
     })
     return max;
 }
-
 function minimum3(cisla3) {
     let min = 6;
     cisla3.forEach(function (value, index) {
@@ -256,30 +269,44 @@ function minimum3(cisla3) {
     })
     return min;
 }
-
 function průměr3(sum3, count3) {
     return (sum3 / count3).toFixed(2);
 }
-
-
-
 function hod3() {
     let h3 = Math.ceil(Math.random() * 6);
     pocetHodu3.push(h3);
+    if (suma3(pocetHodu3) >= 50){
+        
+        if (prvni == "Ne" && druhy == "Ne" && treti =="Ne"){
+            prvni="Ano";
+            alert(`Po ${pocetHodu3.length} hodech  vyhrál hráč ${jmeno3}.`);
+            document.getElementById('prvni').innerHTML = `<p> ${jmeno3} </p>`;
+            
+        }
+         else if (prvni == "Ano" && druhy == "Ne" && treti =="Ne"){
+            druhy="Ano";
+            alert(`Po ${pocetHodu3.length} hodech  je na 2. místě hráč ${jmeno3}.`);
+            document.getElementById('druhy').innerHTML = `<p> ${jmeno3}. </p>`;
+            
+        }
+
+        else if(prvni == "Ano" && druhy == "Ano" && treti =="Ne"){
+            treti="Ano";
+            alert(`Po ${pocetHodu3.length} hodech  je na 3. místě hráč ${jmeno3}.`);
+            document.getElementById('treti').innerHTML = `<p> ${jmeno3} </p>`;
+        }
+        if(prvni == "Ano" && druhy == "Ano" && treti =="Ano"){
+                   
+            alert(`Konec hry, pro pokracovani stisknete tlacitko nová hra.`);
+           
+        }
+        return;
+      
+    } 
     document.getElementById('cube3').src = 'img/kostka' + h3 + '.png';
     document.getElementById('result3').innerHTML = '<p>Hod: ' + h3 + '</p>';
-    document.getElementById('result3').innerHTML +=
-        '<p>Počet hodů: ' + pocetHodu3.length + '</p>';
-
-    
-        document.getElementById('result3').innerHTML +=
-
-            '<p>Součet hodů: ' + suma3(pocetHodu3) + '</p>';
-    
-
- 
-
-
+    document.getElementById('result3').innerHTML +='<p>Počet hodů: ' + pocetHodu3.length + '</p>';
+    document.getElementById('result3').innerHTML +='<p>Součet hodů: ' + suma3(pocetHodu3) + '</p>';
     document.getElementById('result3').innerHTML +=
         '<p>Průměr hodů: ' + průměr3(suma3(pocetHodu3), pocetHodu3.length) + '</p>';
     document.getElementById('result3').innerHTML +=
@@ -291,9 +318,6 @@ function hod3() {
 /*kostka 4*/
 let pocetHodu4 = [];
 let timer4 = false;
-
-
-
 function animace4() {
     let h4 = Math.ceil(Math.random() * 6);
     document.getElementById('cube4').src = 'img/kostka' + h4 + '.png';
@@ -314,19 +338,15 @@ document.getElementById('game4').addEventListener('click', function () {
 
 }
 );
-
 function suma4(cisla4) {
     let sum4 = 0;
     cisla4.forEach(function (value, index) {
         sum4 += value;
     })
 
- if (sum4 >= 50){
-     alert(`Po ${pocetHodu4.length} hodech  vyhrál hráč ${jmeno4},pro pokračování klikněte na talčítko nová hra.`)
- }    
+   
     return sum4;
 }
-
 function max4(cisla4) {
     let max = 1;
     cisla4.forEach(function (value, index) {
@@ -334,7 +354,6 @@ function max4(cisla4) {
     })
     return max;
 }
-
 function minimum4(cisla4) {
     let min = 6;
     cisla4.forEach(function (value, index) {
@@ -342,13 +361,9 @@ function minimum4(cisla4) {
     })
     return min;
 }
-
 function průměr4(sum4, count4) {
     return (sum4 / count4).toFixed(2);
 }
-
-
-
 function hod4() {
    
     let h4 = Math.ceil(Math.random() * 6);
@@ -362,9 +377,38 @@ function hod4() {
       
         document.getElementById('result4').innerHTML +=
 
-            '<p>Součet hodů: ' + suma4(pocetHodu4) + '</p>';
+            '<p>Součet hodů: ' + suma4(pocetHodu4,) + '</p>';
            
-          
+            
+            if (suma4(pocetHodu4) >= 50){
+                
+                if (prvni == "Ne" && druhy == "Ne" && treti =="Ne"){
+                    prvni="Ano";
+                    alert(`Po ${pocetHodu4.length} hodech  je na 1. místě hráč ${jmeno4}.`);
+                    document.getElementById('prvni').innerHTML = `<p> ${jmeno4} </p>`;
+                    
+                }
+                 if (prvni == "Ano" && druhy == "Ne" && treti =="Ne"){
+                    druhy="Ano";
+                    alert(`Po ${pocetHodu4.length} hodech  je na 2. místě hráč ${jmeno4}.`);
+                    document.getElementById('druhy').innerHTML = `<p> ${jmeno4} </p>`;
+                    
+                }
+
+                if(prvni == "Ano" && druhy == "Ano" && treti =="Ne"){
+                    treti="Ano";
+                    alert(`Po ${pocetHodu4.length} hodech  je na 3. místě hráč ${jmeno4}.`);
+                    document.getElementById('treti').innerHTML = `<p> ${jmeno4} </p>`;
+                }
+                if(prvni == "Ano" && druhy == "Ano" && treti =="Ano"){
+                   
+                    alert(`Konec hry, pro pokracovani stisknete tlacitko nová hra. Stupnici vítězů najdete níže.`);
+                   
+                }
+                else
+                return;
+              
+            } 
  
 
 
@@ -381,6 +425,4 @@ function hod4() {
 
 /*Vyhra*/ 
 
-if(suma4(suma4)>=50){
-    alert()
-}
+

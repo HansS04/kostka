@@ -19,13 +19,12 @@
     <div class="row" id="mainNavbar">
 
         <img id="kostkaMini" src="img/kostkamini.png">
-        <p id="nadpis">Kostky</p>
-        <button onclick="document.location='index.html'" style=" margin-left: 500px; padding: 10px;background-image: url(img/wood.jpg);border: solid 3px white;
-        font-family: 'Dancing Script', cursive;color: white;font-size: 20px;" class="col-sm-6" id="novahra">Nová hra</button>
+        <p id="nadpis">Hans Casino</p>
+        <button onclick="document.location='index.html'" id="odznova"  class="col-sm-6" id="novahra">Nová hra</button>
 
     </div>
     <main>
-
+<!--                 Samotná hra                       -->
         <div class="row" class="Kostkyback">
 
 
@@ -35,18 +34,18 @@
                 <div class="text-center" id="jmeno1">
                     <h1>Hráč 1</h1>
                 </div>
-                <button style="color: white;background-color: rgb(134, 72, 36); margin-bottom: 10px;" id="buttonj1">
+                <button class="tlacitko"  id="buttonj1">
                     Nastav si jmeno
                 </button>
                 <figure>
                     <img id="cube" src="img/kostka6.png" alt="Kostka">
                 </figure>
-                <div id="result" id="vysledek"
-                    style="font-family: 'Dancing Script', cursive; background-color: rgb(61, 61, 61);border: 5px solid rgb(134, 72, 36);padding: 5px;">
+                <div id="result" id="vysledek" class="vysledne"
+                class="vysledne">
                     <p>vysledek</p>
                 </div>
-                <button
-                    style="background-image: url(img/wood.jpg); padding: 10px; padding-left: 50px; padding-right: 50px; border: 2px solid white;font-family: 'Dancing Script', cursive; color: white; margin-top: 20px;"
+                <button 
+                    class="hra"
                     id="hra">Hraj</button>
 
             </div>
@@ -56,58 +55,76 @@
                 <div class="text-center" id="jmeno2">
                     <h1>Hráč 2</h1>
                 </div>
-                <button style="color: white;background-color: rgb(134, 72, 36); margin-bottom: 10px;" id="buttonj2">
+                <button class="tlacitko"  id="buttonj2">
                     Nastav si jmeno
                 </button>
                 <figure>
                     <img id="cube2" src="img/kostka6.png" alt="Kostka">
                 </figure>
                 <div id="result2" id="vysledek"
-                    style="font-family: 'Dancing Script', cursive; background-color: rgb(61, 61, 61);border: 5px solid rgb(134, 72, 36);padding: 5px;">
+                    class="vysledne">
                     <p>vysledek</p>
                 </div>
                 <button
-                    style="background-image: url(img/wood.jpg); padding: 10px; padding-left: 50px; padding-right: 50px; border: 2px solid white;font-family: 'Dancing Script', cursive; color: white;margin-top: 20px;"
+               
+                    class="hra"
                     id="game2">Hraj</button>
             </div>
 
             <div class="column" id="kostky">
 
                 <h1 class="text-center" id="jmeno3">Hráč 3</h1>
-                <button style="color: white;background-color: rgb(134, 72, 36); margin-bottom: 10px;" id="buttonj3">
+                <button class="tlacitko"  id="buttonj3">
                     Nastav si jmeno
                 </button>
                 <figure>
                     <img id="cube3" src="img/kostka6.png" alt="Kostka">
                 </figure>
                 <div id="result3" id="vysledek"
-                    style="font-family: 'Dancing Script', cursive; background-color: rgb(61, 61, 61);border: 5px solid rgb(134, 72, 36);padding: 5px;">
+                class="vysledne">
                     <p>vysledek</p>
                 </div>
                 <button
-                    style="background-image: url(img/wood.jpg); padding: 10px; padding-left: 50px; padding-right: 50px; border: 2px solid white;font-family: 'Dancing Script', cursive; color: white;margin-top: 20px;"
+              
+                    class="hra"
                     id="game3">Hraj</button>
 
             </div>
             <div class="column" id="kostky">
 
                 <h1 class="text-center" id="jmeno4">Hráč 4</h1>
-                <button style="color: white;background-color: rgb(134, 72, 36); margin-bottom: 10px;" id="buttonj4">
+                <button class="tlacitko" id="buttonj4">
                     Nastav si jmeno
                 </button>
                 <figure>
                     <img id="cube4" src="img/kostka6.png" alt="Kostka">
                 </figure>
                 <div id="result4" id="vysledek"
-                    style="font-family: 'Dancing Script', cursive; background-color: rgb(61, 61, 61);border: 5px solid rgb(134, 72, 36);padding: 5px;">
+                class="vysledne">
                     <p>vysledek</p>
                 </div>
                 <button
-                    style="background-image: url(img/wood.jpg); padding: 10px; padding-left: 50px; padding-right: 50px; border: 2px solid white;font-family: 'Dancing Script', cursive; color: white;margin-top: 20px;"
+                     class="hra"
                     id="game4">Hraj</button>
 
             </div>
         </div>
+        <div class="posledni" ><h1 style="margin-left: 800px;" >Poslední vítězové</h1></div>
+  
+    <div class="row" style="margin-left: 500px!important;" >
+        <div  class="col-sm6"  >
+            <div  class="poradi" id="prvni"></div>
+            <img   id="medal" src="img/medal1.png" alt="medal1.png">
+        </div>
+        <div  class="col-sm6">
+            <div class="poradi" id="druhy"></div>
+            <img  id="medal" src="img/medal2.png" alt="medal2.png">
+        </div>
+        <div  class="col-sm6">
+            <div class="poradi" id="treti"></div>
+            <img  id="medal" src="img/medal3.png"  alt="medal3.png">
+        </div>
+    </div>
 
         <!--Tady bude tlačítko na předběžné ukončení hry a, jakmile bude některý z výsledků 50, tak se nápis změní na nová hra s odkazem na pvodní stránku-->
 
@@ -116,7 +133,7 @@
 
 
 
-    <footer id="footer2">
+    <footer style="margin-top: 50px;!important">
         <p>By: Jan Slivka 2020 SSPU-Opava</p>
     </footer>
 
@@ -135,9 +152,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="js/game.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/game.js"></script>
+
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 
 }
 #nadpis{
-margin-left:450px;
+margin-left:300px;
 margin-top: 50px;
 font-size: 100px;
 font-family: 'Dancing Script', cursive;
@@ -34,7 +34,7 @@ main{
   
   .column {
     float: left;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 120px;
     padding: 10px;
     height: 300px; 
@@ -43,8 +43,8 @@ main{
 #button{
     color: white;
     padding: 20px;
-    margin-left: 300px;
-    margin-top: 80px;
+    margin-left: 500px;
+    margin-top: 120px;
     border-radius: 20px;
     border: 10px solid  rgb(134, 72, 36) ;
     background-image: url(../img/wood.jpg);
@@ -97,5 +97,55 @@ main{
   font-family: 'Dancing Script', cursive;
   color: white;
   font-size: 20px;
+}
+ .tlacitko{
+  color: white;
+  background-color: rgb(134, 72, 36);
+   margin-bottom: 10px;
+
+ }
+ .vysledne{
+  font-family: 'Dancing Script', cursive;
+   background-color: rgb(61, 61, 61);
+   border: 5px solid rgb(134, 72, 36);
+   padding: 5px;
+ }
+ .hra{
+  background-image: url(../img/wood.jpg);
+   padding: 10px; padding-left: 50px;
+    padding-right: 50px;
+     border: 2px solid white;
+     font-family: 'Dancing Script', cursive;
+      color: white;margin-top: 20px;
+ }
+ #odznova{
+  margin-left: 500px; 
+  padding: 10px;
+  background-image: url(../img/wood.jpg);
+  border: solid 3px white;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 20px;
+ }
+#medal{
+  width: 300px;
+}
+
+.medal1{
+  margin-left: 500px;
+}
+.posledni{
+  margin-top: 210px !important;
+  color: white;
+  font-family: 'Dancing Script' ;
+  background-image: url(../img/wood.jpg);
+  padding: 10px;
+  border-top: 3px solid white;
+  margin-top: 50px;
+}
+.poradi{
+  text-align: center;
+  color: white;
+  font-size: 50px;
 }
  
